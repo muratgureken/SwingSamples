@@ -11,9 +11,13 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class AnaFrame extends JFrame{
 	private JTextField txtUyari;
+	private JTextField textKullaniciAdi;
+	private JTextField textSifre;
 	public AnaFrame() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\MALZEME-Temp0007.jpeg"));
 		getContentPane().setBackground(new Color(192, 192, 192));
@@ -36,6 +40,54 @@ public class AnaFrame extends JFrame{
 		txtUyari.setBounds(109, 40, 115, 20);
 		getContentPane().add(txtUyari);
 		txtUyari.setColumns(10);
+		
+		textKullaniciAdi = new JTextField();
+		textKullaniciAdi.setBounds(138, 87, 86, 20);
+		getContentPane().add(textKullaniciAdi);
+		textKullaniciAdi.setColumns(10);
+		
+		textSifre = new JTextField();
+		textSifre.setBounds(127, 135, 86, 20);
+		getContentPane().add(textSifre);
+		textSifre.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("Kullan\u0131c\u0131 Ad\u0131");
+		lblNewLabel.setBounds(36, 90, 46, 14);
+		getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("\u015Eifre");
+		lblNewLabel_1.setBounds(36, 138, 46, 14);
+		getContentPane().add(lblNewLabel_1);
+		
+		JButton btnIptal = new JButton("Iptal");
+		btnIptal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		btnIptal.setBounds(36, 193, 91, 23);
+		getContentPane().add(btnIptal);
+		
+		JButton btnGiris = new JButton("Giri\u015F");
+		btnGiris.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(textKullaniciAdi.getText().equals("Murat"))
+				{
+					if(textSifre.getText().equals(1))
+					{
+						AnaFrame temp = new AnaFrame();
+						temp.setVisible(true);
+						Layouts.this.dispose();
+					}
+					else
+					{
+						
+					}
+				}
+			}
+		});
+		btnGiris.setBounds(162, 193, 91, 23);
+		getContentPane().add(btnGiris);
 		
 		/*JButton btnNewButton = new JButton("");
 		btnNewButton.setBounds(50, 50, 25, 25);
