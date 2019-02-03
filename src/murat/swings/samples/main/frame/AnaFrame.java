@@ -77,7 +77,7 @@ public class AnaFrame extends JFrame{
 					{
 						AnaFrame temp = new AnaFrame();
 						temp.setVisible(true);
-						Layouts.this.dispose();
+						//Layouts.this.dispose();
 					}
 					else
 					{
